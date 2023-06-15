@@ -40,6 +40,8 @@ build {
       "mkdir -p /opt/coredge/grafana/data",
       "mkdir -p /opt/coredge/grafana/logs",
       "mkdir -p /opt/coredge/grafana/tmp",
+      "sudo chown -R grafana:grafana /opt/coredge/grafana/tmp/",
+      "sudo chmod 775 /opt/coredge/grafana/tmp/",
     ]
   }
   provisioner "file" {
