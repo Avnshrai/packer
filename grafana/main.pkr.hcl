@@ -27,6 +27,7 @@ build {
     inline = [
       "apt-get update",
       "sudo adduser --disabled-password --gecos \"\" grafana",
+      "sudo usermod -aG sudo grafana",
       "apt-get -y install sudo ca-certificates curl tar libfontconfig",
       "mkdir /opt/coredge",
       "mkdir -p /tmp/coredge/pkg/cache/ && cd /tmp/coredge/pkg/cache/",
@@ -38,6 +39,7 @@ build {
       "touch /opt/coredge/grafana/conf/grafana.ini",
       "mkdir -p /opt/coredge/grafana/data",
       "mkdir -p /opt/coredge/grafana/logs",
+      "mkdir -p /opt/coredge/grafana/tmp",
     ]
   }
   provisioner "file" {
